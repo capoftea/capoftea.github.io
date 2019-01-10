@@ -1,9 +1,9 @@
 header {
   height: 100%;
   -webkit-background-size: cover;
-  background-size: cover; 
+   background-size: cover; 
   position: relative;
-  padding: 10% 0;
+  padding: 12% 0;
 }
 
 h1, h2, h3, h4, h5, p {
@@ -51,8 +51,8 @@ table {
 
 .input-wrap input {
   padding: 5px 15px;
-  background-color: transparent;
   border: 1px #fff solid;
+  background-color: transparent;
   color: #fff;
   font-family: 'Montserrat', sans-serif;
   opacity: .8;
@@ -99,9 +99,9 @@ table {
 
 .output input {
   padding: 5px 15px;
-  background-color: transparent;
-  border: 1px #fff solid;
-  color: #fff;
+  background-color: #fff;
+  color: #000;
+  border: none;
   font-family: 'Montserrat', sans-serif;
   opacity: .8;
   margin-left: 10px;

@@ -12,13 +12,13 @@
 </style> 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<!--<script src="//cdn.virot.eu/tools/ipcalc/ipcalc.js" type="text/javascript" defer="defer"></script>-->
-	<script src="ipcalc.js" type="text/javascript" defer="defer"></script>
+	<script src="ipcalc.js" type="text/javascript" defer></script>
 	<!--<link rel="stylesheet" type="text/css" href="//cdn.virot.eu/tools/ipcalc/ipcalc.css">-->
 	<link rel="stylesheet" type="text/css" href="ipcalc.css">
 </head>
 <body>
 
-	<header class="section" id="calc" style="background-image: url(img/rawpixel-602154-unsplash.png);">
+	<header class="section" id="calc" style="background-image: url(img/network.jpg);">
 		<div class="container">
 			<div class="input">
 				<h2>Введіть необхідні дані для обрахунку</h2>
@@ -26,18 +26,18 @@
 					<div class="row">
 						<div class="col-sm-6 col-12">
 							<div class="input-wrap">
-								<h3>IP-Address:</h3><input type="text" name="in_address" value="127.0.0.1" onkeyup="ipChange()" />
+								<h3>IP-адреса:</h3><input type="text" name="in_address" value="127.0.0.1" onkeyup="ipChange()" />
 							</div>
 							
 						</div>
 						<div class="col-sm-6 col-12">
 							<div class="input-wrap">
-								<h3>Subnet:</h3><input type="text" name="in_subnet" value="255.0.0.0" onkeyup="subChange()" />
+								<h3>Маска:</h3><input type="text" name="in_subnet" value="255.0.0.0" onkeyup="subChange()" />
 							</div>
 						</div>
 					</div>
 					
-					<div id='is_valid' class='is_valid' ><p>Ви ввели вірні дані</p></div>
+					<div id='is_valid' class='is_valid' style="background-color: transparent;"><p></p></div>
 				</form>
 			</div>
 			<div class="output">
@@ -74,7 +74,7 @@
 <tr><td>/128</td><td>Only one device</td><td>1/4,294,967,296</td><td class="static-r">268435456</td><td class="static-r">268435454</td></tr>
 </table>
 </div>-->
-<script type="text/javascript">
+<!--<script type="text/javascript" async>
 	function testForJavaScript() {
 //When page + Javascript is loaded hide javascript requirement
 document.getElementById('javascriptRequired').style.visibility="hidden";
@@ -88,6 +88,6 @@ if (window.addEventListener)
 else if (window.attachEvent)
 	window.attachEvent("onload", testForJavaScript);
 else window.onload = testForJavaScript;
-</script>
+</script>-->
 </body>
 </html>

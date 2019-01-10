@@ -129,15 +129,15 @@ function InvalidateOutput()
   document.forms['output']['out_amountaddresses'].value = ''
   document.forms['output']['out_ptraddr'].value = ''
   document.getElementById("is_valid").innerHTML = 'Перевірте правильність вводу інформації '
-  document.getElementById("is_valid").style.backgroundColor = "#ffbb00"
+  document.getElementById("is_valid").style.backgroundColor = "red"
   document.getElementById("is_valid").style.padding = "10px"
 }
 
 function UpdateOutput()
 {
 // Перевірка на валідність адреси
-  document.getElementById("is_valid").innerHTML = 'Дані введені вірно'
-  document.getElementById("is_valid").style.backgroundColor = "green"
+  document.getElementById("is_valid").innerHTML = ''
+  document.getElementById("is_valid").style.backgroundColor = "transparent"
 // Locate Address
   if (document.forms['input']['in_address'].value.indexOf('/') > -1)
     {
