@@ -170,7 +170,16 @@ a:hover {
   color: #fff;
 }
 
-button::hover {
+.btn-primary {
+  background-color: #ffbb00;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  font-weight: 700;
+  text-transform: upper
+}
+
+.btn-primary::hover {
   cursor: poinetr;
 }
 
