@@ -180,7 +180,8 @@ a:hover {
 }
 
 .btn-primary::hover {
-  cursor: poinetr;
+  cursor: pointer;
+  background-color: #ffbb00;
 }
 
 .feed-info p {
