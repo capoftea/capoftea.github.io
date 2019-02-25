@@ -160,7 +160,7 @@ a:hover {
   text-align: center;
 }
 
-#button {
+#button, button {
   background-color: #ffbb00;
   padding: 10px 20px;
   border-radius: 5px;
@@ -168,6 +168,10 @@ a:hover {
   font-weight: 700;
   text-transform: uppercase;
   color: #fff;
+}
+
+button::hover {
+  cursor: poinetr;
 }
 
 .feed-info p {
