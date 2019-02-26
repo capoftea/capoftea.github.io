@@ -14,14 +14,7 @@ if (turladdr.match(PatternAddr) == turladdr && turlcidr.match(PatternCidr) == tu
  checkAndUpdate()
 }
 
-$('#select-beast').selectize({
-  create: true,
-  sortField: {
-    field: 'text',
-    direction: 'asc'
-  },
-  dropdownParent: 'body'
-});
+
 
 //перевірка ip-адреси
 

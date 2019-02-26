@@ -169,3 +169,12 @@ a:hover {
   text-transform: uppercase;
   color: #fff;
 }
+
+.feed-info p {
+  color: #000;
+  font-size: 16px;
+}
+.feed-info {
+  background-color: #fff;
+  display: none;
+}
