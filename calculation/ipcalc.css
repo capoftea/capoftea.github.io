@@ -179,9 +179,14 @@ a:hover {
   text-transform: upper
 }
 
+
 .btn-primary:hover {
   cursor: pointer;
   background-color: #ffbb00;
+
+
+.btn-primary:hover {
+  cursor: poinetr;
 }
 
 .feed-info p {
