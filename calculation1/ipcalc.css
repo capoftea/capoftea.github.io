@@ -6,6 +6,43 @@ header {
   padding: 12% 0;
 }
 
+.router-boot {
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+.router-boot header {
+  padding: 5%;
+}
+
+.router-boot .img-wrap {
+  text-align: center;
+}
+
+.router-boot .img-wrap p {
+  font-size: 14px;
+  line-height: 22px;
+  color: #fff;
+}
+
+.router-boot .selectize {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.router-boot .selectize h3 {
+  width: 50%;
+}
+
+.router-boot .selectize .control-group {
+  width: 50%;
+}
+
+.router-boot input {
+  max-width: 50%;
+}
+
 h1, h2, h3, h4, h5, p, a {
   font-family: 'Montserrat', sans-serif;
 }
@@ -117,7 +154,7 @@ table {
   margin: 10px;
 }
 
-.router .output {
+.router, .router-boot .output {
   display: none;
 
 }
@@ -191,4 +228,30 @@ a:hover {
 .feed-info {
   background-color: #fff;
   display: none;
+}
+
+.nav-tabs {
+  border-bottom: none;
+}
+
+.nav-tabs > li > a {
+  color: #ffbb00;
+  text-decoration: none;
+}
+
+.nav-tabs > li > a:hover {
+  background-color: none;
+}
+
+a:hover {
+  background-color: #000;
+  text-decoration: none;
+}
+
+.nav > li > a:focus, .nav > li > a:hover {
+  background-color: none;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+  color: #ffbb00;
 }

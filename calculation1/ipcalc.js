@@ -15,30 +15,6 @@ if (turladdr.match(PatternAddr) == turladdr && turlcidr.match(PatternCidr) == tu
 }
 
 
-$("#btn-save").click( function() {
-      var textip = document.getElementsByTagName("input")[0];
-      var ip = textip.value;
-      //alert(ip);
-      var textmask = document.getElementsByTagName("input")[1];
-      var mask = textmask.value;
-      //alert(mask);
-      var select = document.getElementById("select_");
-      var value = select.value;
-      var s = "Ip-адреса :" + ip + ";";
-      var d = "Маска процесу :" + mask + ";";
-      var f = "Конфігурації роутера  :" + value + ";";
-      //alert(value);
-      var text = (s + d + f);
-      //var text = mask;
-      var filename = $(value).val()
-      var blob = new Blob([text], {type: "text/plain;charset=utf-8"});
-      saveAs(blob, filename+".txt");
-      location.href = 'router.html';
-    });
-
-    function  reload() {
-      location.href = "https://capoftea.github.io/calculation/router.html";
-    };
 
 function ipChange() {
   if (document.forms['input']['in_address'].value.indexOf('/') > -1)

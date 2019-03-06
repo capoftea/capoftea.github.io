@@ -1,0 +1,336 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>IP-calculation</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta name="description" content="This is a simple IP/Subnet calculator allowing you to enter the address with subnet or in CIDR form. It will output lots of information." />
+	<meta name="keywords" content="ip subnet cheat sheet calculator A B C class CIDR" />
+	<meta name="author" content="Oscar Virot" />
+	<link href="https://cdn.virot.eu/tools/ipcalc/favicon.png" rel="shortcut icon" />
+	<style>
+	@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+</style> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!--<script src="//cdn.virot.eu/tools/ipcalc/ipcalc.js" type="text/javascript" defer="defer"></script>-->
+<script src="ipcalc.js" type="text/javascript"></script>
+<script src="jquery.min.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="selectize.css" >
+<!--<link rel="stylesheet" type="text/css" href="//cdn.virot.eu/tools/ipcalc/ipcalc.css">-->
+<link rel="stylesheet" type="text/css" href="ipcalc.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+</head>
+<body class="router-boot" style="background-image: url(network.jpg);">
+
+	<ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#home">PT-Empty</a></li>
+  <li><a data-toggle="tab" href="#menu1">PT-Router</a></li>
+  <li><a data-toggle="tab" href="#menu2">1941</a></li>
+  <li><a data-toggle="tab" href="#menu2">2901</a></li>
+</ul>
+
+<div class="tab-content">
+  <div id="home" class="tab-pane fade in active">
+    <header class="section" id="calc">
+		<div class="container">
+			<div class="input">
+				<div class="img-wrap">
+					<h2>Роутер PT-Empty</h2>
+					<img src="img/1941.png" alt="" />
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae autem quae tenetur at ut, tempore qui veritatis beatae officia quas inventore nesciunt, blanditiis quia quidem velit asperiores quisquam hic natus libero fugiat adipisci debitis eveniet. Tempore, unde, quod. Laudantium, harum!</p>
+				</div>
+				<form name="input">
+					<div class="row">
+						<div class="col-sm-3 col-12">
+							<div class="input-wrap">
+								<h3 id="h3">IP-адреса:</h3><input type="text" id="in_address" name="in_address" value="127.0.0.1" onkeyup="ipChange()" />
+							</div>
+							
+						</div>
+						<div class="col-sm-3 col-12">
+							<div class="input-wrap">
+								<h3>Маска:</h3><input type="text" name="in_subnet" value="255.0.0.0" onkeyup="subChange()" />
+							</div>
+						</div>
+						<div class="col-md-3 col-12">
+							<div class="input-wrap">
+								<div class="selectize">
+									<h3>Номер порту</h3>
+									<div class="control-group">
+										<select id="select_" class="demo-default" placeholder="Select a person...">
+											<option  value="FastEthernet1/0">1</option>
+											<option  value="FastEthernet2/0">2</option>
+											<option  value="FastEthernet3/0">3</option>
+											<option  value="FastEthernet4/0">4</option>
+											<option  value="FastEthernet5/0">5</option>
+											<option  value="FastEthernet6/0">6</option>
+											<option  value="FastEthernet7/0">7</option>
+											<option  value="FastEthernet8/0">8</option>
+											<option  value="FastEthernet9/0">9</option>
+											<option  value="FastEthernet10/0">10</option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3 col-12">
+							<div class="input-wrap">
+								<div class="selectize">
+									<div class="control-group">
+										<select id="select_1" class="demo-default" placeholder="Select a person...">
+											<option  value="shutdown">shutdown</option>
+											<option  value="no shutdown">no shutdown</option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-12 col-12">
+							<div class="button-wrap">
+								<button id="btn-save" type="submit" class="btn btn-primary" onclick="reload()" >Роздрукувати файл</button>
+							</div>							 
+							
+					</div>
+					<div class="col-md-12">
+						<div id="printableArea" class="feed-info">
+							<p id="ip">Lorem ipsum dolor.</p>
+							<p id="mask">Lorem ipsum dolor.</p>
+							<p id="rout">Lorem ipsum dolor.</p>
+						</div>
+							</div>
+						</div>
+
+						<div id='is_valid' class='is_valid' style="background-color: transparent;"><p></p></div>
+					</form>
+				</div>
+				<form name="output" action="https://tools.virot.eu/ipcalc/post">
+					<div class="output">
+						<h2>Вихідні дані</h2>
+						<form name="output" action="https://tools.virot.eu/ipcalc/post">
+							<table>
+								<tr class="tr"><td><h5>IP адреса:</h5></td><td><input type="text" name="out_address" disabled="disabled" /></td></tr>
+								<tr class="tr"><td><h5>Перша доступна адреса:</h5></td><td><input type="text" name="out_firstusable" disabled="disabled" /></td></tr>
+								<tr class="tr"><td><h5>Підмережа:</h5></td><td><input type="text" name="out_subnet" disabled="disabled" /></td></tr>
+								<tr class="tr"><td><h5>Останя адреса:</h5></td><td><input type="text" name="out_lastusable" disabled="disabled" /></td></tr>
+								<tr class="tr"><td><h5>CIDR:</h5></td><td><input type="text" name="out_cidr" disabled="disabled" /></td></tr>
+								<tr class="tr"><td><h5>Може використовуватись:</h5></td><td><input type="text" name="out_amountaddresses" disabled="disabled" /></td></tr>
+								<tr class="tr"><td><h5>Мережева адреса:</h5></td><td><input type="text" name="out_netaddr" disabled="disabled" /></td></tr>
+								<tr class="tr"><td><h5>Зворотня адреса:</h5></td><td><input type="text" name="out_ptraddr" disabled="disabled" /></td></tr>
+								<tr class="tr"><td><h5>Широкомовна адреса:</h5></td><td><input type="text" name="out_bcast" disabled="disabled" /></td></tr>
+							</table>
+						</form>
+					</div>
+				</div>
+
+			</header>
+  </div>
+  <div id="menu1" class="tab-pane fade">
+    <header class="section" id="calc">
+		<div class="container">
+			<div class="input">
+				<h2>Введіть необхідні дані для обрахунку</h2>
+				<form name="input">
+					<div class="row">
+						<div class="col-sm-4 col-12">
+							<div class="input-wrap">
+								<h3 id="h3">IP-адреса:</h3><input type="text" id="in_address" name="in_address" value="127.0.0.1" onkeyup="ipChange()" />
+							</div>
+							
+						</div>
+						<div class="col-sm-4 col-12">
+							<div class="input-wrap">
+								<h3>Маска:</h3><input type="text" name="in_subnet" value="255.0.0.0" onkeyup="subChange()" />
+							</div>
+						</div>
+						<div class="col-md-4 col-12">
+							<div class="input-wrap">
+								<div class="selectize">
+									<div class="control-group">
+										<select id="select_" class="demo-default" placeholder="Select a person...">
+											<option  value="1">PT-Empty</option>
+											<option  value="2">PT-Router</option>
+											<option  value="3">1941</option>
+											<option  value="4">2901</option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-12 col-12">
+							<div class="button-wrap">
+								<button id="btn-save" type="submit" class="btn btn-primary" onclick="reload()" >Роздрукувати файл</button>
+							</div>							 
+							
+					</div>
+					<div class="col-md-12">
+						<div id="printableArea" class="feed-info">
+							<p id="ip">Lorem ipsum dolor.</p>
+							<p id="mask">Lorem ipsum dolor.</p>
+							<p id="rout">Lorem ipsum dolor.</p>
+						</div>
+							</div>
+						</div>
+
+						<div id='is_valid' class='is_valid' style="background-color: transparent;"><p></p></div>
+					</form>
+				</div>
+				<form name="output" action="https://tools.virot.eu/ipcalc/post">
+					<div class="output">
+						<h2>Вихідні дані</h2>
+						<form name="output" action="https://tools.virot.eu/ipcalc/post">
+							<table>
+								<tr class="tr"><td><h5>IP адреса:</h5></td><td><input type="text" name="out_address" disabled="disabled" /></td></tr>
+								<tr class="tr"><td><h5>Перша доступна адреса:</h5></td><td><input type="text" name="out_firstusable" disabled="disabled" /></td></tr>
+								<tr class="tr"><td><h5>Підмережа:</h5></td><td><input type="text" name="out_subnet" disabled="disabled" /></td></tr>
+								<tr class="tr"><td><h5>Останя адреса:</h5></td><td><input type="text" name="out_lastusable" disabled="disabled" /></td></tr>
+								<tr class="tr"><td><h5>CIDR:</h5></td><td><input type="text" name="out_cidr" disabled="disabled" /></td></tr>
+								<tr class="tr"><td><h5>Може використовуватись:</h5></td><td><input type="text" name="out_amountaddresses" disabled="disabled" /></td></tr>
+								<tr class="tr"><td><h5>Мережева адреса:</h5></td><td><input type="text" name="out_netaddr" disabled="disabled" /></td></tr>
+								<tr class="tr"><td><h5>Зворотня адреса:</h5></td><td><input type="text" name="out_ptraddr" disabled="disabled" /></td></tr>
+								<tr class="tr"><td><h5>Широкомовна адреса:</h5></td><td><input type="text" name="out_bcast" disabled="disabled" /></td></tr>
+							</table>
+						</form>
+					</div>
+				</div>
+
+			</header>
+  </div>
+  <div id="menu2" class="tab-pane fade">
+    <header class="section" id="calc">
+		<div class="container">
+			<div class="input">
+				<h2>Введіть необхідні дані для обрахунку</h2>
+				<form name="input">
+					<div class="row">
+						<div class="col-sm-4 col-12">
+							<div class="input-wrap">
+								<h3 id="h3">IP-адреса:</h3><input type="text" id="in_address" name="in_address" value="127.0.0.1" onkeyup="ipChange()" />
+							</div>
+							
+						</div>
+						<div class="col-sm-4 col-12">
+							<div class="input-wrap">
+								<h3>Маска:</h3><input type="text" name="in_subnet" value="255.0.0.0" onkeyup="subChange()" />
+							</div>
+						</div>
+						<div class="col-md-4 col-12">
+							<div class="input-wrap">
+								<div class="selectize">
+									<div class="control-group">
+										<select id="select_" class="demo-default" placeholder="Select a person...">
+											<option  value="1">PT-Empty</option>
+											<option  value="2">PT-Router</option>
+											<option  value="3">1941</option>
+											<option  value="4">2901</option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-12 col-12">
+							<div class="button-wrap">
+								<button id="btn-save" type="submit" class="btn btn-primary" onclick="reload()" >Роздрукувати файл</button>
+							</div>							 
+							
+					</div>
+					<div class="col-md-12">
+						<div id="printableArea" class="feed-info">
+							<p id="ip">Lorem ipsum dolor.</p>
+							<p id="mask">Lorem ipsum dolor.</p>
+							<p id="rout">Lorem ipsum dolor.</p>
+						</div>
+							</div>
+						</div>
+
+						<div id='is_valid' class='is_valid' style="background-color: transparent;"><p></p></div>
+					</form>
+				</div>
+				<form name="output" action="https://tools.virot.eu/ipcalc/post">
+					<div class="output">
+						<h2>Вихідні дані</h2>
+						<form name="output" action="https://tools.virot.eu/ipcalc/post">
+							<table>
+								<tr class="tr"><td><h5>IP адреса:</h5></td><td><input type="text" name="out_address" disabled="disabled" /></td></tr>
+								<tr class="tr"><td><h5>Перша доступна адреса:</h5></td><td><input type="text" name="out_firstusable" disabled="disabled" /></td></tr>
+								<tr class="tr"><td><h5>Підмережа:</h5></td><td><input type="text" name="out_subnet" disabled="disabled" /></td></tr>
+								<tr class="tr"><td><h5>Останя адреса:</h5></td><td><input type="text" name="out_lastusable" disabled="disabled" /></td></tr>
+								<tr class="tr"><td><h5>CIDR:</h5></td><td><input type="text" name="out_cidr" disabled="disabled" /></td></tr>
+								<tr class="tr"><td><h5>Може використовуватись:</h5></td><td><input type="text" name="out_amountaddresses" disabled="disabled" /></td></tr>
+								<tr class="tr"><td><h5>Мережева адреса:</h5></td><td><input type="text" name="out_netaddr" disabled="disabled" /></td></tr>
+								<tr class="tr"><td><h5>Зворотня адреса:</h5></td><td><input type="text" name="out_ptraddr" disabled="disabled" /></td></tr>
+								<tr class="tr"><td><h5>Широкомовна адреса:</h5></td><td><input type="text" name="out_bcast" disabled="disabled" /></td></tr>
+							</table>
+						</form>
+					</div>
+				</div>
+
+			</header>
+  </div>
+</div>
+
+
+<script>
+	
+$("#btn-save").click( function() {
+      var textip = document.getElementsByTagName("input")[0];
+      var ip = textip.value;
+      //alert(ip);
+      var textmask = document.getElementsByTagName("input")[1];
+      var mask = textmask.value;
+      //alert(mask);
+      var select = document.getElementById("select_");
+      var value = select.value;
+      var select1 = document.getElementById("select_1");
+      var value1 = select1.value;
+      var s = "interface" + value + ";";
+      var d = "ip address" + mask +  ip + ";";
+      var f = "duplex auto";
+      var g = "speed auto" ;
+      var h = value1 ;
+      //alert(value);
+      var text = (s + d + f + g + h);
+      //var text = mask;
+      var filename = $(value).val()
+      var blob = new Blob([text], {type: "text/plain;charset=utf-8"});
+      saveAs(blob, filename+".txt");
+      location.href = 'router.html';
+    });
+
+    function  reload() {
+      location.href = "https://capoftea.github.io/calculation/router.html";
+    };
+</script>
+			
+
+
+
+
+<!--<div class="hiddensection" id="IPv6Static">
+<h2>Default IPv6 blocksizes</h2>
+<table class="static">
+<tr><th>CIDR</th><th>Description</th><th>Number of /64</th></tr>
+<tr><td>/32</td><td>Default blocksize for a LIR</td><td>4,294,967,296</td><td class="static-r">16777216</td><td class="static-r">16777214</td></tr>
+<tr><td>/48</td><td>Default block for companies</td><td>65,536</td><td class="static-r">2147483648</td><td class="static-r">2147483646</td></tr>
+<tr><td>/53</td><td>192.0.0.0</td><td>256</td><td class="static-r">1073741824</td><td class="static-r">1073741822</td></tr>
+<tr><td>/64</td><td>Default block</td><td>1</td><td class="static-r">536870912</td><td class="static-r">536870910</td></tr>
+<tr><td>/128</td><td>Only one device</td><td>1/4,294,967,296</td><td class="static-r">268435456</td><td class="static-r">268435454</td></tr>
+</table>
+</div>-->
+<!--<script type="text/javascript" async>
+	function testForJavaScript() {
+//When page + Javascript is loaded hide javascript requirement
+document.getElementById('javascriptRequired').style.visibility="hidden";
+document.getElementById('javascriptRequired').style.margin="0px"
+document.getElementById('javascriptRequired').style.height="0px"
+document.getElementById('javascriptRequired').style.padding="0px"
+changeSection('calc')
+}
+if (window.addEventListener)
+	window.addEventListener("load", testForJavaScript, false);
+else if (window.attachEvent)
+	window.attachEvent("onload", testForJavaScript);
+else window.onload = testForJavaScript;
+</script>-->
+</body>
+</html>
