@@ -130,8 +130,8 @@
 		<div class="container">
 			<div class="input">
 				<div class="img-wrap">
-					<h2>Роутер PT-Empty</h2>
-					<img src="img/1941.png" alt="" />
+					<h2>Роутер PT-Router</h2>
+					<img src="img/pt-router.png" alt="" />
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae autem quae tenetur at ut, tempore qui veritatis beatae officia quas inventore nesciunt, blanditiis quia quidem velit asperiores quisquam hic natus libero fugiat adipisci debitis eveniet. Tempore, unde, quod. Laudantium, harum!</p>
 				</div>
 				<form name="input">
@@ -224,8 +224,8 @@
 		<div class="container">
 			<div class="input">
 				<div class="img-wrap">
-					<h2>Роутер PT-Empty</h2>
-					<img src="img/1941.png" alt="" />
+					<h2>Роутер 2901</h2>
+					<img src="img/2901.png" alt="" />
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae autem quae tenetur at ut, tempore qui veritatis beatae officia quas inventore nesciunt, blanditiis quia quidem velit asperiores quisquam hic natus libero fugiat adipisci debitis eveniet. Tempore, unde, quod. Laudantium, harum!</p>
 				</div>
 				<form name="input">
@@ -329,6 +329,7 @@ $("#btn-save").click( function() {
       var value = select.value;
       var select1 = document.getElementById("select_1");
       var value1 = select1.value;
+      var name = "startup-config";
       var s = "interface  " + value + ";";
       var d = "ip address  " + mask +  ip + ";";
       var f = "duplex auto  ";
@@ -337,7 +338,7 @@ $("#btn-save").click( function() {
       //alert(value);
       var text = (s + d + f + g + h);
       //var text = mask;
-      var filename = $("value").val()
+      var filename = $(name).val()
       var blob = new Blob([text], {type: "text/plain;charset=utf-8"});
       saveAs(blob, filename+".txt");
       location.href = 'router-boots.html';
