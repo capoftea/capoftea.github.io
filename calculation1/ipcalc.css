@@ -207,6 +207,8 @@ a:hover {
   color: #fff;
 }
 
+
+
 .btn-primary {
   background-color: #ffbb00;
   padding: 10px 20px;
@@ -216,7 +218,15 @@ a:hover {
   text-transform: upper
 }
 
-.btn-primary:hover {
+.btn-primary.focus, .btn-primary:focus {
+  background-color: #ffbb00;
+}
+
+.btn-primary.active.focus, .btn-primary.active:focus, .btn-primary.active:hover, .btn-primary:active.focus, .btn-primary:active:focus, .btn-primary:active:hover, .open > .dropdown-toggle.btn-primary.focus, .open > .dropdown-toggle.btn-primary:focus, .open > .dropdown-toggle.btn-primary:hover {
+  background-color: #ffbb00;
+}
+
+.btn-primary:hover, .btn-primary:active {
   cursor: pointer;
   background-color: #ffbb00;
 }
