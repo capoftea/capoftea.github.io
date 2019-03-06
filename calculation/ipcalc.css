@@ -160,7 +160,7 @@ a:hover {
   text-align: center;
 }
 
-#button, button {
+#button {
   background-color: #ffbb00;
   padding: 10px 20px;
   border-radius: 5px;
@@ -170,6 +170,7 @@ a:hover {
   color: #fff;
 }
 
+<<<<<<< HEAD
 .btn-primary {
   background-color: #ffbb00;
   padding: 10px 20px;
@@ -189,6 +190,8 @@ a:hover {
 >>>>>>> parent of 6c90781... remark color on the button
 }
 
+=======
+>>>>>>> parent of e9d9ad3... remark button
 .feed-info p {
   color: #000;
   font-size: 16px;
