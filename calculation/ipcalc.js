@@ -245,6 +245,7 @@ function changeSection(Section)
   }
 }
 
+<<<<<<< HEAD
 
 /*
 * FileSaver.js
@@ -413,3 +414,5 @@ if (typeof module !== 'undefined') {
 }
 
 
+=======
+>>>>>>> parent of dd27270... fix file saver
