@@ -179,6 +179,15 @@ a:hover {
   text-transform: upper
 }
 
+<<<<<<< HEAD
+.btn-primary:hover {
+  cursor: pointer;
+  background-color: #ffbb00;
+=======
+.btn-primary::hover {
+  cursor: poinetr;
+>>>>>>> parent of 6c90781... remark color on the button
+}
 
 .feed-info p {
   color: #000;
