@@ -1,0 +1,368 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>IP-calculation</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta name="description" content="This is a simple IP/Subnet calculator allowing you to enter the address with subnet or in CIDR form. It will output lots of information." />
+	<meta name="keywords" content="ip subnet cheat sheet calculator A B C class CIDR" />
+	<meta name="author" content="Oscar Virot" />
+	<link href="https://cdn.virot.eu/tools/ipcalc/favicon.png" rel="shortcut icon" />
+	<style>
+	@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+</style> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!--<script src="//cdn.virot.eu/tools/ipcalc/ipcalc.js" type="text/javascript" defer="defer"></script>-->
+<script src="ipcalc.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="selectize.css" >
+<!--<link rel="stylesheet" type="text/css" href="//cdn.virot.eu/tools/ipcalc/ipcalc.css">-->
+<link rel="stylesheet" type="text/css" href="ipcalc.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script src="ipcalc.js" type="text/javascript" defer></script>
+
+
+</head>
+<body class="router-boot">
+	<div class="bg" style="background-image: url(img/redesign/bg1.png);"></div>
+	<div class="bgb" style="background-image: url(img/redesign/bg2.png);"></div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="logo-wrap">
+					<div class="logo">
+						<img src="img/redesign/logo.png" alt="" />
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="menu-wrap">
+					<ul class="menu">
+						<li><a href="#">Довідка 1</a></li>
+						<li><a href="#">Довідка 1</a></li>
+						<li><a href="#">Довідка 1</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="col-sm-12">
+				<ul class="nav nav-tabs">
+					<li class="active"><a data-toggle="tab" href="#home">PT-Empty</a></li>
+					<li><a data-toggle="tab" href="#menu1">PT-Router</a></li>
+					<li><a data-toggle="tab" href="#menu2">1941</a></li>
+					<li><a data-toggle="tab" href="#menu2">2901</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="tab-content">
+		<div id="home" class="tab-pane fade in active">
+			<header class="section" id="calc">
+				<div class="container">
+					<div class="input">
+						<form name="input">
+							<div class="row">
+								<div class="col-sm-3 col-12">
+									<div class="input-wrap">
+										<input type="text" id="in_address" name="in_address" value="127.0.0.1" onkeyup="ipChange()" />
+									</div>
+									<div class="input-wrap">
+										<input type="text" name="in_subnet" value="255.0.0.0" onkeyup="subChange()" />
+									</div>
+									<div class="input-wrap">
+										<div class="selectize">
+											<div class="control-group">
+												<select id="select_" class="demo-default" placeholder="Select a person...">
+													<option  value="FastEthernet1/0">1</option>
+													<option  value="FastEthernet2/0">2</option>
+													<option  value="FastEthernet3/0">3</option>
+													<option  value="FastEthernet4/0">4</option>
+													<option  value="FastEthernet5/0">5</option>
+													<option  value="FastEthernet6/0">6</option>
+													<option  value="FastEthernet7/0">7</option>
+													<option  value="FastEthernet8/0">8</option>
+													<option  value="FastEthernet9/0">9</option>
+													<option  value="FastEthernet10/0">10</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="input-wrap">
+										<div class="selectize">
+											<div class="control-group">
+												<select id="select_1" class="demo-default" placeholder="Select a person...">
+													<option  value="shutdown">shutdown</option>
+													<option  value="no shutdown">no shutdown</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="button-wrap">
+										<button id="btn-save" class="button" type="submit" class="btn btn-primary" onclick="reload()" >Роздрукувати файл</button>
+									</div>
+								</div>
+								<div class="col-sm-9">
+									<div class="img-wrap-router">
+										<img src="img/2901.png" alt="" />
+									</div>
+								</div>
+								<div class="text-wrap-router">
+									<p>Маршрутизатор Cisco 2900 серії - це пристрої з інтегрованими сервісами другого покоління сімейства ISR G2 (Integrated Services Router Generation 2).  Маршрутизатор Cisco ISR серії 2900 розроблено для малих і середніх підприємств, яким потрібні сучасні технологічні рішення, що забезпечують надійне високопродуктивне підключення до мережі Інтернет зі швидкістю маршрутизації до 75 мегабіт в секунду. До особливостей маршрутизаторів Cisco 2900 серії можна віднести гігабітні Ethernet порти з можливістю переходу в оптику (SFP-роз'єми), слоти розширення EHWIC, сумісні з модулями попереднього покоління WIC / VWIC / HWIC і слоти розширення під модулі SM (Service Modules), сумісні з модулями попереднього покоління NM / NME / EVM. </p>
+								</div>
+								
+							</div>
+
+							<div id='is_valid' class='is_valid' style="background-color: transparent;"><p></p></div>
+						</form>
+					</div>
+					<form name="output" action="https://tools.virot.eu/ipcalc/post">
+						<div class="output">
+							<form name="output" action="https://tools.virot.eu/ipcalc/post">
+								<table>
+									<tr class="tr"><td><h5>IP адреса:</h5></td><td><input type="text" name="out_address" disabled="disabled" /></td></tr>
+									<tr class="tr"><td><h5>Перша доступна адреса:</h5></td><td><input type="text" name="out_firstusable" disabled="disabled" /></td></tr>
+									<tr class="tr"><td><h5>Підмережа:</h5></td><td><input type="text" name="out_subnet" disabled="disabled" /></td></tr>
+									<tr class="tr"><td><h5>Останя адреса:</h5></td><td><input type="text" name="out_lastusable" disabled="disabled" /></td></tr>
+									<tr class="tr"><td><h5>CIDR:</h5></td><td><input type="text" name="out_cidr" disabled="disabled" /></td></tr>
+									<tr class="tr"><td><h5>Може використовуватись:</h5></td><td><input type="text" name="out_amountaddresses" disabled="disabled" /></td></tr>
+									<tr class="tr"><td><h5>Мережева адреса:</h5></td><td><input type="text" name="out_netaddr" disabled="disabled" /></td></tr>
+									<tr class="tr"><td><h5>Зворотня адреса:</h5></td><td><input type="text" name="out_ptraddr" disabled="disabled" /></td></tr>
+									<tr class="tr"><td><h5>Широкомовна адреса:</h5></td><td><input type="text" name="out_bcast" disabled="disabled" /></td></tr>
+								</table>
+							</form>
+						</div>
+					</div>
+
+				</header>
+			</div>
+			<div id="menu1" class="tab-pane fade">
+				<header class="section" id="calc">
+				<div class="container">
+					<div class="input">
+						<form name="input">
+							<div class="row">
+								<div class="col-sm-3 col-12">
+									<div class="input-wrap">
+										<input type="text" id="in_address" name="in_address" value="127.0.0.1" onkeyup="ipChange()" />
+									</div>
+									<div class="input-wrap">
+										<input type="text" name="in_subnet" value="255.0.0.0" onkeyup="subChange()" />
+									</div>
+									<div class="input-wrap">
+										<div class="selectize">
+											<div class="control-group">
+												<select id="select_" class="demo-default" placeholder="Select a person...">
+													<option  value="FastEthernet1/0">1</option>
+													<option  value="FastEthernet2/0">2</option>
+													<option  value="FastEthernet3/0">3</option>
+													<option  value="FastEthernet4/0">4</option>
+													<option  value="FastEthernet5/0">5</option>
+													<option  value="FastEthernet6/0">6</option>
+													<option  value="FastEthernet7/0">7</option>
+													<option  value="FastEthernet8/0">8</option>
+													<option  value="FastEthernet9/0">9</option>
+													<option  value="FastEthernet10/0">10</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="input-wrap">
+										<div class="selectize">
+											<div class="control-group">
+												<select id="select_1" class="demo-default" placeholder="Select a person...">
+													<option  value="shutdown">shutdown</option>
+													<option  value="no shutdown">no shutdown</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="button-wrap">
+										<button id="btn-save" class="button" type="submit" class="btn btn-primary" onclick="reload()" >Роздрукувати файл</button>
+									</div>
+								</div>
+								<div class="col-sm-9">
+									<div class="img-wrap-router">
+										<img src="img/2901.png" alt="" />
+									</div>
+								</div>
+								<div class="text-wrap-router">
+									<p>Маршрутизатор Cisco 2900 серії - це пристрої з інтегрованими сервісами другого покоління сімейства ISR G2 (Integrated Services Router Generation 2).  Маршрутизатор Cisco ISR серії 2900 розроблено для малих і середніх підприємств, яким потрібні сучасні технологічні рішення, що забезпечують надійне високопродуктивне підключення до мережі Інтернет зі швидкістю маршрутизації до 75 мегабіт в секунду. До особливостей маршрутизаторів Cisco 2900 серії можна віднести гігабітні Ethernet порти з можливістю переходу в оптику (SFP-роз'єми), слоти розширення EHWIC, сумісні з модулями попереднього покоління WIC / VWIC / HWIC і слоти розширення під модулі SM (Service Modules), сумісні з модулями попереднього покоління NM / NME / EVM. </p>
+								</div>
+								
+							</div>
+
+							<div id='is_valid' class='is_valid' style="background-color: transparent;"><p></p></div>
+						</form>
+					</div>
+					<form name="output" action="https://tools.virot.eu/ipcalc/post">
+						<div class="output">
+							<form name="output" action="https://tools.virot.eu/ipcalc/post">
+								<table>
+									<tr class="tr"><td><h5>IP адреса:</h5></td><td><input type="text" name="out_address" disabled="disabled" /></td></tr>
+									<tr class="tr"><td><h5>Перша доступна адреса:</h5></td><td><input type="text" name="out_firstusable" disabled="disabled" /></td></tr>
+									<tr class="tr"><td><h5>Підмережа:</h5></td><td><input type="text" name="out_subnet" disabled="disabled" /></td></tr>
+									<tr class="tr"><td><h5>Останя адреса:</h5></td><td><input type="text" name="out_lastusable" disabled="disabled" /></td></tr>
+									<tr class="tr"><td><h5>CIDR:</h5></td><td><input type="text" name="out_cidr" disabled="disabled" /></td></tr>
+									<tr class="tr"><td><h5>Може використовуватись:</h5></td><td><input type="text" name="out_amountaddresses" disabled="disabled" /></td></tr>
+									<tr class="tr"><td><h5>Мережева адреса:</h5></td><td><input type="text" name="out_netaddr" disabled="disabled" /></td></tr>
+									<tr class="tr"><td><h5>Зворотня адреса:</h5></td><td><input type="text" name="out_ptraddr" disabled="disabled" /></td></tr>
+									<tr class="tr"><td><h5>Широкомовна адреса:</h5></td><td><input type="text" name="out_bcast" disabled="disabled" /></td></tr>
+								</table>
+							</form>
+						</div>
+					</div>
+
+				</header>
+				</div>
+				<div id="menu2" class="tab-pane fade">
+					<header class="section" id="calc">
+				<div class="container">
+					<div class="input">
+						<form name="input">
+							<div class="row">
+								<div class="col-sm-3 col-12">
+									<div class="input-wrap">
+										<input type="text" id="in_address" name="in_address" value="127.0.0.1" onkeyup="ipChange()" />
+									</div>
+									<div class="input-wrap">
+										<input type="text" name="in_subnet" value="255.0.0.0" onkeyup="subChange()" />
+									</div>
+									<div class="input-wrap">
+										<div class="selectize">
+											<div class="control-group">
+												<select id="select_" class="demo-default" placeholder="Select a person...">
+													<option  value="FastEthernet1/0">1</option>
+													<option  value="FastEthernet2/0">2</option>
+													<option  value="FastEthernet3/0">3</option>
+													<option  value="FastEthernet4/0">4</option>
+													<option  value="FastEthernet5/0">5</option>
+													<option  value="FastEthernet6/0">6</option>
+													<option  value="FastEthernet7/0">7</option>
+													<option  value="FastEthernet8/0">8</option>
+													<option  value="FastEthernet9/0">9</option>
+													<option  value="FastEthernet10/0">10</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="input-wrap">
+										<div class="selectize">
+											<div class="control-group">
+												<select id="select_1" class="demo-default" placeholder="Select a person...">
+													<option  value="shutdown">shutdown</option>
+													<option  value="no shutdown">no shutdown</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="button-wrap">
+										<button id="btn-save" class="button" type="submit" class="btn btn-primary" onclick="reload()" >Роздрукувати файл</button>
+									</div>
+								</div>
+								<div class="col-sm-9">
+									<div class="img-wrap-router">
+										<img src="img/2901.png" alt="" />
+									</div>
+								</div>
+								<div class="text-wrap-router">
+									<p>Маршрутизатор Cisco 2900 серії - це пристрої з інтегрованими сервісами другого покоління сімейства ISR G2 (Integrated Services Router Generation 2).  Маршрутизатор Cisco ISR серії 2900 розроблено для малих і середніх підприємств, яким потрібні сучасні технологічні рішення, що забезпечують надійне високопродуктивне підключення до мережі Інтернет зі швидкістю маршрутизації до 75 мегабіт в секунду. До особливостей маршрутизаторів Cisco 2900 серії можна віднести гігабітні Ethernet порти з можливістю переходу в оптику (SFP-роз'єми), слоти розширення EHWIC, сумісні з модулями попереднього покоління WIC / VWIC / HWIC і слоти розширення під модулі SM (Service Modules), сумісні з модулями попереднього покоління NM / NME / EVM. </p>
+								</div>
+								
+							</div>
+
+							<div id='is_valid' class='is_valid' style="background-color: transparent;"><p></p></div>
+						</form>
+					</div>
+					<form name="output" action="https://tools.virot.eu/ipcalc/post">
+						<div class="output">
+							<form name="output" action="https://tools.virot.eu/ipcalc/post">
+								<table>
+									<tr class="tr"><td><h5>IP адреса:</h5></td><td><input type="text" name="out_address" disabled="disabled" /></td></tr>
+									<tr class="tr"><td><h5>Перша доступна адреса:</h5></td><td><input type="text" name="out_firstusable" disabled="disabled" /></td></tr>
+									<tr class="tr"><td><h5>Підмережа:</h5></td><td><input type="text" name="out_subnet" disabled="disabled" /></td></tr>
+									<tr class="tr"><td><h5>Останя адреса:</h5></td><td><input type="text" name="out_lastusable" disabled="disabled" /></td></tr>
+									<tr class="tr"><td><h5>CIDR:</h5></td><td><input type="text" name="out_cidr" disabled="disabled" /></td></tr>
+									<tr class="tr"><td><h5>Може використовуватись:</h5></td><td><input type="text" name="out_amountaddresses" disabled="disabled" /></td></tr>
+									<tr class="tr"><td><h5>Мережева адреса:</h5></td><td><input type="text" name="out_netaddr" disabled="disabled" /></td></tr>
+									<tr class="tr"><td><h5>Зворотня адреса:</h5></td><td><input type="text" name="out_ptraddr" disabled="disabled" /></td></tr>
+									<tr class="tr"><td><h5>Широкомовна адреса:</h5></td><td><input type="text" name="out_bcast" disabled="disabled" /></td></tr>
+								</table>
+							</form>
+						</div>
+					</div>
+
+				</header>
+					</div>
+				</div>
+
+
+				<script>
+
+					$("#btn-save").click( function() {
+						var textip = document.getElementsByTagName("input")[0];
+						var ip = textip.value;
+      //alert(ip);
+      var textmask = document.getElementsByTagName("input")[1];
+      var mask = textmask.value;
+      //alert(mask);
+      var select = document.getElementById("select_");
+      var value = select.value;
+      var select1 = document.getElementById("select_1");
+      var value1 = select1.value;
+      var name = "startup-config";
+      var s = "interface  " + value + ";";
+      var d = "ip address  " + mask +  ip + ";";
+      var f = "duplex auto  ";
+      var g = "speed auto  " ;
+      var h = value1 ;
+      var name = "Config";
+      //alert(value);
+      var text = (s + d + f + g + h);
+      //var text = mask;
+      var filename = $(name).val()
+      var blob = new Blob([text], {type: "text/plain;charset=utf-8"});
+      saveAs(blob, filename+".txt");
+      location.href = 'router-boots.html';
+    });
+
+					function  reload() {
+						location.href = "https://capoftea.github.io/calculation/router-boots.html";
+					};
+				</script>
+
+
+
+
+
+<!--<div class="hiddensection" id="IPv6Static">
+<h2>Default IPv6 blocksizes</h2>
+<table class="static">
+<tr><th>CIDR</th><th>Description</th><th>Number of /64</th></tr>
+<tr><td>/32</td><td>Default blocksize for a LIR</td><td>4,294,967,296</td><td class="static-r">16777216</td><td class="static-r">16777214</td></tr>
+<tr><td>/48</td><td>Default block for companies</td><td>65,536</td><td class="static-r">2147483648</td><td class="static-r">2147483646</td></tr>
+<tr><td>/53</td><td>192.0.0.0</td><td>256</td><td class="static-r">1073741824</td><td class="static-r">1073741822</td></tr>
+<tr><td>/64</td><td>Default block</td><td>1</td><td class="static-r">536870912</td><td class="static-r">536870910</td></tr>
+<tr><td>/128</td><td>Only one device</td><td>1/4,294,967,296</td><td class="static-r">268435456</td><td class="static-r">268435454</td></tr>
+</table>
+</div>-->
+<!--<script type="text/javascript" async>
+	function testForJavaScript() {
+//When page + Javascript is loaded hide javascript requirement
+document.getElementById('javascriptRequired').style.visibility="hidden";
+document.getElementById('javascriptRequired').style.margin="0px"
+document.getElementById('javascriptRequired').style.height="0px"
+document.getElementById('javascriptRequired').style.padding="0px"
+changeSection('calc')
+}
+if (window.addEventListener)
+	window.addEventListener("load", testForJavaScript, false);
+else if (window.attachEvent)
+	window.attachEvent("onload", testForJavaScript);
+else window.onload = testForJavaScript;
+</script>-->
+</body>
+</html>
+
+
+

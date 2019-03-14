@@ -1,0 +1,215 @@
+body {
+  background-color: #f4f4f4;
+}
+
+.router-boot {
+  position: relative;
+  height: 100%;
+}
+
+.router-boot .is_valid {
+  margin-top: 0;
+}
+
+.router-boot .output {
+  display: none;
+}
+
+.router-boot .logo-wrap {
+  margin-bottom: 20px;
+}
+
+.router-boot .input {
+  margin: 5% 0;
+  margin-bottom: 15%;
+}
+
+.router-boot .menu {
+  padding-bottom: 100px;
+}
+
+header {
+  background-repeat: no-repeat;
+  background-position: right;
+  position: relative;
+}
+
+.bg {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background-repeat: no-repeat;
+}
+
+.bgb {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50%;
+  height: 15%;
+  background-repeat: no-repeat;
+}
+
+.logo-wrap {
+  margin-top: 15px;
+  margin-bottom: 60px;
+}
+
+.op {
+  opacity: 0;
+}
+
+.menu {
+  padding: 0;
+  margin-top: 15px;
+  padding-bottom: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.menu li {
+  display: inline-block;
+  padding: 0 20px;
+}
+
+.menu-wrap .menu li {
+  list-style-type: none;
+}
+
+.menu-wrap .menu li a {
+  font-size: 14px;
+  font-family: "Geometria";
+  color: #fff ;
+  opacity: .9;
+  transition: all .25s ease;
+}
+
+.menu-wrap .menu li a:hover {
+  text-decoration: none;
+  opacity: 1;
+}
+
+input, select {
+  border-radius: 19px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 4px 14.79px 2.21px rgba(0, 0, 0, 0.05);
+  border: none;
+  font-family: Montserrat;
+  padding: 10px 25px;
+}
+
+.input-1 {
+  width: 30%;
+}
+
+select {
+  width: 95%;
+}
+
+.input-wrap {
+  margin: 5px 0;
+}
+
+.output {
+  margin-top: 5%;
+}
+
+.output h5 {
+  font-size: 16px;
+  opacity: .8;
+  font-weight: 400;
+  font-family: Montserrat;
+}
+
+table tr h5 {
+  margin: 15px 0;
+  margin-left: 5px;
+}
+
+.is_valid {
+  margin-top: 30px;
+  border-radius: 15px;
+  width: 30%;
+  font-family: Montserrat;
+  color: #fff;
+  font-weight: 700;
+}
+
+.button-wrap {
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
+
+.button-wrap .button {
+  border-width: 2px;
+  border-color: rgb(3, 47, 117);
+  border-style: solid;
+  border-radius: 19px;
+  padding: 10px 25px;
+  font-size: 16px;
+  font-family: Montserrat;
+  color: rgba(3, 41, 110, 0.741);
+  font-weight: bold;
+  transition: all .25s ease;
+}
+
+.button-wrap .button img {
+  padding-left: 25px;
+}
+
+.button-wrap .button:hover, .button-wrap .button:active {
+  text-decoration: none;
+  background-color: rgb(3, 47, 117);
+  color: #fff;
+}
+
+.nav-tabs {
+  display: flex;
+  border-bottom: none;
+}
+
+.nav-tabs > li > a {
+  font-size: 16px;
+  font-family: Montserrat;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.nav-tabs > li {
+  border-bottom: 2px solid #bababa;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #034086;
+  color: #034086;
+  font-weight: bold;
+}
+
+.text-wrap-router p {
+  font-size: 14px;
+  font-family: Montserrat;
+  color: rgba(0, 0, 0, 0.851);
+  line-height: 1.5;
+}
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
