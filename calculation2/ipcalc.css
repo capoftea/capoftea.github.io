@@ -41,6 +41,7 @@ header {
   width: 50%;
   height: 100%;
   background-repeat: no-repeat;
+  z-index: -10;
 }
 
 .bgb {
@@ -194,6 +195,143 @@ table tr h5 {
   color: rgba(0, 0, 0, 0.851);
   line-height: 1.5;
 }
+
+
+@media only screen and (max-width : 1200px) {
+.bg {
+  width: 65%;
+}
+.bgb {
+  display: none;
+}
+}
+
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+.bg {
+  width: 60%;
+}
+.input-wrap input {
+  width: 100%;
+}
+.input-wrap select {
+  width: 100%;
+}
+}
+  
+
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px){
+.input-wrap input {
+  width: 100%;
+}
+.input-wrap select {
+  width: 100%;
+}
+.bg {
+  width: 70%;
+}
+.is_valid {
+  width: 60%
+}
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: right;
+}
+
+.router-boot .menu {
+  flex-direction: row;
+}
+.menu li {
+  padding: 5px 0;
+}
+.input-1 {
+  width: 60%;
+}
+.router-boot .menu li {
+  padding: 0 5px;
+}
+}
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px){
+.input, select {
+  width: 100%;
+}
+.img-wrap-router img {
+  width: 80%;
+}
+.bg {
+  height: 100%;
+}
+.is_valid {
+  width: 80%
+}
+.input-1 {
+  width: 80%;
+}
+.tr {
+  display: flex;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  -o-flex-direction: column;
+  flex-direction: column;
+}
+.button-wrap .button img {
+  display: none;
+}
+.button-wrap .button {
+  font-size: 12px;
+  padding: 5px 10px;
+  white-space: nowrap;
+}
+}
+
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px){
+  /**/
+}
+
+
+/*==========  Mobile First  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
+
+  /**/
+}
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px){
+  /**/
+}
+
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px){
+
+}
+
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px){
+  /**/
+}
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px){
+  /**/
+}
+
 
 
 
