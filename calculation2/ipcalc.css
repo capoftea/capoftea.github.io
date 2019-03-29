@@ -26,6 +26,8 @@ body {
 
 .router-boot .menu {
   padding-bottom: 100px;
+  display: flex;
+  justify-content: flex-end;
 }
 
 header {
@@ -69,7 +71,7 @@ header {
   margin-top: 15px;
   padding-bottom: 40px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .menu li {
