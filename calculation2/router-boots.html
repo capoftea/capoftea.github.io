@@ -310,14 +310,20 @@
       var select1 = document.getElementById("select_1");
       var value1 = select1.value;
       var name = "startup-config";
+      var dec = "!\r\n"
+      var dec1 = "!\r\n"
+      var dec2 = "!\r\n"
+      var dec3 = "!\r\n"
+      var dec4 = "!\r\n"
       var s = "interface  " + value + ";\r\n";
       var d = "ip address  " + mask +  ip + ";\r\n";
       var f = "duplex auto  \r\n";
       var g = "speed auto  \r\n" ;
+      var dec5 = "!\r\n"
       var h = value1 ;
       var name = "Config";
       //alert(value);
-      var text = (s + d + f + g + h);
+      var text = (s + d + f + g + h + dec + dec1 + dec2 + dec3 + dec4 + dec5);
       //var text = mask;
       var filename = $(name).val()
       var blob = new Blob([text], {type: "text/plain;charset=utf-8"});
