@@ -24,7 +24,6 @@
 </head>
 <body class="router-boot">
 	<div class="bg" style="background-image: url(img/redesign/bg1.png);"></div>
-	<div class="bgb" style="background-image: url(img/redesign/bg2.png);"></div>
 
 	<div class="container">
 		<div class="row">
@@ -311,8 +310,8 @@
       var select1 = document.getElementById("select_1");
       var value1 = select1.value;
       var name = "startup-config";
-      var s = "interface  " + value + ";";
-      var d = "ip address  " + mask +  ip + ";";
+      var s = "interface  " + value + ";\r\n";
+      var d = "ip address  " + mask +  ip + ";\r\n";
       var f = "duplex auto  ";
       var g = "speed auto  " ;
       var h = value1 ;

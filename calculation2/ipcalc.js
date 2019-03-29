@@ -29,7 +29,7 @@ function ipChange() {
 }
 checkAndUpdate()
 }
-
+//1
 function subChange()
 {
   if (document.forms['input']['in_address'].value.indexOf('/') > -1)
@@ -129,10 +129,10 @@ function InvalidateOutput()
   document.forms['output']['out_amountaddresses'].value = ''
   document.forms['output']['out_ptraddr'].value = ''
   document.getElementById("is_valid").innerHTML = 'Перевірте правильність вводу інформації '
-  document.getElementById("is_valid").style.backgroundColor = "red"
+  document.getElementById("is_valid").style.backgroundColor = "#FFA500"
   document.getElementById("is_valid").style.padding = "10px"
 }
-
+//2
 function UpdateOutput()
 {
 // Перевірка на валідність адреси
