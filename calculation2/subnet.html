@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>IP-calculation</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta name="description" content="This is a simple IP/Subnet calculator allowing you to enter the address with subnet or in CIDR form. It will output lots of information." />
+	<meta name="keywords" content="ip subnet cheat sheet calculator A B C class CIDR" />
+	<meta name="author" content="Oscar Virot" />
+	<link href="https://cdn.virot.eu/tools/ipcalc/favicon.png" rel="shortcut icon" />
+	<style>
+	@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+</style> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!--<script src="//cdn.virot.eu/tools/ipcalc/ipcalc.js" type="text/javascript" defer="defer"></script>-->
+<script src="ipcalc.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="selectize.css" >
+<!--<link rel="stylesheet" type="text/css" href="//cdn.virot.eu/tools/ipcalc/ipcalc.css">-->
+<link rel="stylesheet" type="text/css" href="ipcalc.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script src="ipcalc.js" type="text/javascript" defer></script>
+
+
+</head>
+<body class="router-boot">
+	<div class="bg" style="background-image: url(img/redesign/bg1.png);"></div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-3 col-xs-3">
+				<div class="logo-wrap">
+					<a href="https://capoftea.github.io/calculation2/"><div class="logo">
+						<img src="img/redesign/logo.png" alt="" />
+					</div></a>
+				</div>
+			</div>
+			<div class="col-sm-9 col-xs-9">
+				<div class="menu-wrap">
+					<ul class="menu">
+						<li><a href="#">Статична маршрутизація</a></li>
+						<li><a href="#">Динамічна маршрутизація</a></li>
+						<li><a href="#">Ділення мережі на підмережі</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-sm-12 col-xs-12 col-12">
+				<div class="text-descr">
+					<p>Процес поділу мережі на підмережі простіше пояснити на конкретному прикладі.
+Уявімо, що у нас є мережа з трьох маршрутизаторів, трьох комутаторів і декількох комп'ютерів, яку потрібно розділити на 6 підмереж. Схема мережі показана на малюнку нижче.
+схема мережі: 3 роутера, 3 комутатора і кілька комп'ютерів
+На всю мережу нам виділили один IP-адреса 192.168.0.0/24, який нам і потрібен розділити на 6 підмереж. У двійковому вигляді цей IP-адреса виглядає так (порцію мережі я виділю більш жирним шрифтом): 11000000.10101000.00000000.00000000.
+Необхідна кількість вузлів (хостів, в даному випадку комп'ютерів) в кожній підмережі:
+Підмережа A - 100 вузлів
+Підмережа B - 50 вузлів
+Підмережа C - 20 вузлів
+Підмережа D - 2 вузла
+Підмережа E - 2 вузла
+Підмережа F - 2 вузла
+Запам'ятайте, починати ділити мережу потрібно з мережі з максимальною кількістю вузлів.
+"/ 24" - це префікс маски підмережі (короткий запис маски). Повна запис маски підмережі 255.255.255.0. У довічним відображенні маска підмережі виглядає так: 11111111.11111111.11111111.00000000 - це значить, що нам доступно 8 біт для поділу мережі.
+
+ Першою підмережі A нам потрібно виділити IP-адреси для 100 вузлів. У таблиці "BIN to DEC" ми бачимо, що зайнявши в масці один біт з восьми, ми отримаємо 1 біт до порції мережі (а це 2 підмережі) і 7 бітів в порції адреси (01111111 = 127). 127 разом з нулем за кількістю дорівнює 128, це загальна кількість адрес, що задовольняє вимогам (і навіть залишається декілька адрес про запас).
+І так, міняємо маску з "/ 24" на "25" (в двійковому форматі буде 11111111.11111111.11111111.10000000). Застосуємо нову маску до нашої мережі і отримаємо 2 підмережі (порцію мережі я виділю більш жирним шрифтом):
+1 - 11000000.10101000.00000000.00000000 (мережа 192.168.0.0/25)
+2 - 11000000.10101000.00000000.10000000 (мережа 192.168.0.128/25)
+У нових двох мережах порція мережі становить 7 бітів. За формулою (яка є в шпаргалці) перевіримо, чи вистачить нам 7 бітів для мережі з 100 вузлами. 2 ^ 7-2 = 128-2 = 126, це означає що 7 бітів дає нам 126 адрес для вузлів. (Нагадаю формулу: 2 ^ X-2 = кількість адрес для вузлів, де X дорівнює кількості нулів, а "-2" - це під спеціальні адреси, які не можна призначати вузлам.)
+Залишилася у нас одна мережа 192.168.0.128/25, і потрібно для підмережі B 50 адрес для вузлів. Як і в попередній раз, ми бачимо в таблиці "BIN to DEC" 00111111 = 63, це більше 50, а значить задовольняє вимогам. Займаємо ще один біт у порції адреси, залишається 6 (2 ^ 6-2 = 62). Маска стає на одиницю більше / 26, застосовуємо її до нашої мережі і отримуємо дві нові підмережі (порцію мережі я виділю більш жирним шрифтом):
+1 - 11000000.10101000.00000000.10000000 (мережа 192.168.0.128/26)
+2 - 11000000.10101000.00000000.11000000 (мережа 192.168.0.192/26)
+Таким же чином відокремлюємо ще 1 біт від порції адреси вузла (00011111 = 31, що більше 20, і отже нам підходить), маска вже / 27. Знову дві мережі: 1 - 11000000.10101000.00000000.11000000 (мережа 192.168.0.192/27)
+2 - 11000000.10101000.00000000.11100000 (мережа 192.168.0.224/27)
+Залишилося нам виділити 3 підмережі по 2 адреси для вузлів. По таблиці бачимо, що нам достатньо для порції адреси вузла всього двох бітів (00000011 = 3), 2 ^ 2-2 = 2 адреси для двох вузлів.
+У свою чергу для трьох, однакових за розміром, підмереж досить теж двох бітів (2 ^ 2 = 4, формула зі шпаргалки). Всього в IP-адресу 32 біта, віднімаємо потрібні нам 2 і отримуємо 30, отже використовуємо маску / 30. Для нашої залишилася мережі це виглядає так (порцію мережі я виділю більш жирним шрифтом): 11000000.10101000.00000000.11100000 (мережа 192.168.0.224/30).
+Ділимо нашу нову мережу на 3 підмережі:
+1 - 11000000.10101000.00000000.11100000 (мережа 192.168.0.224/30).
+2 - 11000000.10101000.00000000.11100100 (мережа 192.168.0.228/30).
+3 - 11000000.10101000.00000000.11101000 (мережа 192.168.0.232/30).
+Готово, завдання виконано:
+Підмережа A - 192.168.0.0/25
+Підмережа B - 192.168.0.128/26
+Підмережа C - 192.168.0.192/27
+Підмережа D - 192.168.0.224/30
+Підмережа E - 192.168.0.228/30
+Підмережа F - 192.168.0.232/30</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	
+					</div>
+				</div>
+
+
+
+
+
+
+
+
+<!--<div class="hiddensection" id="IPv6Static">
+<h2>Default IPv6 blocksizes</h2>
+<table class="static">
+<tr><th>CIDR</th><th>Description</th><th>Number of /64</th></tr>
+<tr><td>/32</td><td>Default blocksize for a LIR</td><td>4,294,967,296</td><td class="static-r">16777216</td><td class="static-r">16777214</td></tr>
+<tr><td>/48</td><td>Default block for companies</td><td>65,536</td><td class="static-r">2147483648</td><td class="static-r">2147483646</td></tr>
+<tr><td>/53</td><td>192.0.0.0</td><td>256</td><td class="static-r">1073741824</td><td class="static-r">1073741822</td></tr>
+<tr><td>/64</td><td>Default block</td><td>1</td><td class="static-r">536870912</td><td class="static-r">536870910</td></tr>
+<tr><td>/128</td><td>Only one device</td><td>1/4,294,967,296</td><td class="static-r">268435456</td><td class="static-r">268435454</td></tr>
+</table>
+</div>-->
+<!--<script type="text/javascript" async>
+	function testForJavaScript() {
+//When page + Javascript is loaded hide javascript requirement
+document.getElementById('javascriptRequired').style.visibility="hidden";
+document.getElementById('javascriptRequired').style.margin="0px"
+document.getElementById('javascriptRequired').style.height="0px"
+document.getElementById('javascriptRequired').style.padding="0px"
+changeSection('calc')
+}
+if (window.addEventListener)
+	window.addEventListener("load", testForJavaScript, false);
+else if (window.attachEvent)
+	window.attachEvent("onload", testForJavaScript);
+else window.onload = testForJavaScript;
+</script>-->
+</body>
+</html>
+
+
+

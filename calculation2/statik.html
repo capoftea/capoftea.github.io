@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>IP-calculation</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta name="description" content="This is a simple IP/Subnet calculator allowing you to enter the address with subnet or in CIDR form. It will output lots of information." />
+	<meta name="keywords" content="ip subnet cheat sheet calculator A B C class CIDR" />
+	<meta name="author" content="Oscar Virot" />
+	<link href="https://cdn.virot.eu/tools/ipcalc/favicon.png" rel="shortcut icon" />
+	<style>
+	@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+</style> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!--<script src="//cdn.virot.eu/tools/ipcalc/ipcalc.js" type="text/javascript" defer="defer"></script>-->
+<script src="ipcalc.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="selectize.css" >
+<!--<link rel="stylesheet" type="text/css" href="//cdn.virot.eu/tools/ipcalc/ipcalc.css">-->
+<link rel="stylesheet" type="text/css" href="ipcalc.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script src="ipcalc.js" type="text/javascript" defer></script>
+
+
+</head>
+<body class="router-boot">
+	<div class="bg" style="background-image: url(img/redesign/bg1.png);"></div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-3 col-xs-3">
+				<div class="logo-wrap">
+					<a href="https://capoftea.github.io/calculation2/"><div class="logo">
+						<img src="img/redesign/logo.png" alt="" />
+					</div></a>
+				</div>
+			</div>
+			<div class="col-sm-9 col-xs-9">
+				<div class="menu-wrap">
+					<ul class="menu">
+						<li><a href="#">Статична маршрутизація</a></li>
+						<li><a href="#">Динамічна маршрутизація</a></li>
+						<li><a href="#">Ділення мережі на підмережі</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-sm-12 col-xs-12 col-12">
+				<div class="text-descr">
+					<p><b>Статична IP-адреса</b> - це призначена на постійній основі адреса пристрою в комп'ютерній мережі. Даний тип адреси означає, що вона не змінює своє значення протягом часу, і дана адреса завжди ідентифікує один і той же пристрій, котрому вона була призначена початково.
+Як правило, всі сервери в інтернеті мають статичні IP адреси. Це необхідно для їх нормального функціонування. Виділення адреси на постійній основі для сервера дає впевненість у тому, що при зверненні за даною адресою сьогодні, завтра і в будь-який інший час, ви отримаєте доступ до того ж самого серверу в мережі.
+Наприклад, якщо ви хочете організувати постійний доступ до свого комп'ютера ззовні, або хочете запустити на постійній основі ігровий або веб-сервер, для цієї мети вам потрібна виділена статична IP-адреса.
+Більшість провайдерів Інтернет надають послуги виделення статичних IP-адрес на додаткових платних умовах. Таким чином, якщо вам знадобилася статична IP-адреса, вам слід звернутися до свого постачальника послуг Інтернет.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	
+					</div>
+				</div>
+
+
+
+
+
+
+
+
+<!--<div class="hiddensection" id="IPv6Static">
+<h2>Default IPv6 blocksizes</h2>
+<table class="static">
+<tr><th>CIDR</th><th>Description</th><th>Number of /64</th></tr>
+<tr><td>/32</td><td>Default blocksize for a LIR</td><td>4,294,967,296</td><td class="static-r">16777216</td><td class="static-r">16777214</td></tr>
+<tr><td>/48</td><td>Default block for companies</td><td>65,536</td><td class="static-r">2147483648</td><td class="static-r">2147483646</td></tr>
+<tr><td>/53</td><td>192.0.0.0</td><td>256</td><td class="static-r">1073741824</td><td class="static-r">1073741822</td></tr>
+<tr><td>/64</td><td>Default block</td><td>1</td><td class="static-r">536870912</td><td class="static-r">536870910</td></tr>
+<tr><td>/128</td><td>Only one device</td><td>1/4,294,967,296</td><td class="static-r">268435456</td><td class="static-r">268435454</td></tr>
+</table>
+</div>-->
+<!--<script type="text/javascript" async>
+	function testForJavaScript() {
+//When page + Javascript is loaded hide javascript requirement
+document.getElementById('javascriptRequired').style.visibility="hidden";
+document.getElementById('javascriptRequired').style.margin="0px"
+document.getElementById('javascriptRequired').style.height="0px"
+document.getElementById('javascriptRequired').style.padding="0px"
+changeSection('calc')
+}
+if (window.addEventListener)
+	window.addEventListener("load", testForJavaScript, false);
+else if (window.attachEvent)
+	window.attachEvent("onload", testForJavaScript);
+else window.onload = testForJavaScript;
+</script>-->
+</body>
+</html>
+
+
+
