@@ -198,6 +198,7 @@ table tr h5 {
   font-family: Montserrat;
   color: rgba(0, 0, 0, 0.851);
   line-height: 1.5;
+  margin-top: 20px;
 }
 
 
@@ -260,6 +261,7 @@ table tr h5 {
   padding: 0 5px;
 }
 }
+
 
 
 /* Extra Small Devices, Phones */
