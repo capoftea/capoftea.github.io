@@ -49,7 +49,7 @@
 					<li class="active"><a data-toggle="tab" href="#home">2900</a></li>
 					<li><a data-toggle="tab" href="#menu1">SB RV340</a></li>
 					<li><a data-toggle="tab" href="#menu2">SB 892FSP</a></li>
-					<li><a data-toggle="tab" href="#menu2">SB RV345</a></li>
+					<li><a data-toggle="tab" href="#menu3">SB RV345</a></li>
 				</ul>
 			</div>
 		</div>
@@ -264,6 +264,84 @@
 								</div>
 								<div class="col-md-8 col-sm-12 col-xs-12 col-12">
 									<div class="img-wrap-router">
+										<img src="img/two.jpg" alt="" />
+									</div>
+									<div class="text-wrap-router">
+									<p>Маршрутизатор Cisco SB 892FSP надає комплексний захист від загроз, забезпечує безпеку мережі від вразливостей і атак в інтернеті. Виріб дає змогу організувати широкосмуговий зв'язок і Metro Ethernet.
+
+Ви отримуєте централізовані та віддалені можливості керування через веб-інструменти та програмне забезпечення Cisco IOS для повної видимості та контролю конфігурації мережі на віддаленому сайті.
+
+Пристрій спрощує розгортання сервісів Ethernet WAN, забезпечує наскрізне керування, перевірку на відповідність рівня обслуговування (OA&M), адміністрування й обслуговування (SLA), а також керування конфігурацією.</p>
+								</div>
+								</div>
+								
+							</div>
+
+							<div id='is_valid' class='is_valid' style="background-color: transparent;"><p></p></div>
+						</form>
+					</div>
+					<form name="output" action="https://tools.virot.eu/ipcalc/post">
+						<div class="output">
+							<form name="output" action="https://tools.virot.eu/ipcalc/post">
+								<table>
+									<tr class="tr"><td><h5>IP адреса:</h5></td><td><input type="text" name="out_address" disabled="disabled" /></td></tr>
+									<tr class="tr"><td><h5>Перша доступна адреса:</h5></td><td><input type="text" name="out_firstusable" disabled="disabled" /></td></tr>
+									<tr class="tr"><td><h5>Підмережа:</h5></td><td><input type="text" name="out_subnet" disabled="disabled" /></td></tr>
+									<tr class="tr"><td><h5>Останя адреса:</h5></td><td><input type="text" name="out_lastusable" disabled="disabled" /></td></tr>
+									<tr class="tr"><td><h5>CIDR:</h5></td><td><input type="text" name="out_cidr" disabled="disabled" /></td></tr>
+									<tr class="tr"><td><h5>Може використовуватись:</h5></td><td><input type="text" name="out_amountaddresses" disabled="disabled" /></td></tr>
+									<tr class="tr"><td><h5>Мережева адреса:</h5></td><td><input type="text" name="out_netaddr" disabled="disabled" /></td></tr>
+									<tr class="tr"><td><h5>Зворотня адреса:</h5></td><td><input type="text" name="out_ptraddr" disabled="disabled" /></td></tr>
+									<tr class="tr"><td><h5>Широкомовна адреса:</h5></td><td><input type="text" name="out_bcast" disabled="disabled" /></td></tr>
+								</table>
+							</form>
+						</div>
+					</div>
+
+
+
+				</header>
+					</div>
+
+					<div id="menu3" class="tab-pane fade">
+					<header class="section" id="calc">
+				<div class="container">
+					<div class="input">
+						<form name="input">
+							<div class="row">
+								<div class="col-md-4 col-sm-12 col-xs-12 col-12">
+									<div class="input-wrap">
+										<input type="text" id="in_address" name="in_address" value="127.0.0.1" onkeyup="ipChange()" />
+									</div>
+									<div class="input-wrap">
+										<input type="text" name="in_subnet" value="255.0.0.0" onkeyup="subChange()" />
+									</div>
+									<div class="input-wrap">
+										<div class="selectize">
+											<div class="control-group">
+												<select id="select_" class="demo-default" placeholder="Select a person...">
+													<option  value="FastEthernet1/0">1</option>
+													<option  value="FastEthernet2/0">2</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="input-wrap">
+										<div class="selectize">
+											<div class="control-group">
+												<select id="select_1" class="demo-default" placeholder="Select a person...">
+													<option  value="shutdown">shutdown</option>
+													<option  value="no shutdown">no shutdown</option>
+												</select>
+											</div>
+										</div>
+									</div>
+									<div class="button-wrap">
+										<button id="btn-save" class="button" type="submit" class="btn btn-primary" onclick="reload()" >Роздрукувати файл</button>
+									</div>
+								</div>
+								<div class="col-md-8 col-sm-12 col-xs-12 col-12">
+									<div class="img-wrap-router">
 										<img src="img/5.jpg" alt="" />
 									</div>
 									<div class="text-wrap-router">
@@ -308,6 +386,8 @@
 							</form>
 						</div>
 					</div>
+
+					
 
 				</header>
 					</div>
