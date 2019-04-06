@@ -420,6 +420,7 @@
       var select1 = document.getElementById("select_1");
       var value1 = select1.value;
       var name = "startup-config";
+      var start = "!\r\n version 12.2 \r\n no service timestamps log datetime msec \r\n no service timestamps debug datetime msec \r\n no service password-encryption \r\n ! \r\n hostname Router \r\n !  \r\n ! \r\n ! \r\n no ip cef \r\n no ipv6 cef \r\n ! \r\n ! \r\n ! \r\n ! \r\n ! \r\n ! \r\n !\r\n ! \r\n !\r\n!\r\n!r\n!\r\n!\r\n!\r\n!\r\n!"
       var dec = "!\r\n"
       var dec1 = "!\r\n"
       var dec2 = "!\r\n"
@@ -433,7 +434,7 @@
       var h = value1 + "!\r\n" ;
       var name = "Config";
       //alert(value);
-      var text = (dec + dec1 + dec2 + dec3 + dec4 + s + d + f + g + h + dec5);
+      var text = (start + dec + dec1 + dec2 + dec3 + dec4 + s + d + f + g + h + dec5);
       //var text = mask;
       var filename = $(name).val()
       var blob = new Blob([text], {type: "text/plain;charset=utf-8"});
@@ -447,7 +448,7 @@
 				</script>
 
 
-
+       
 
 
 <!--<div class="hiddensection" id="IPv6Static">
