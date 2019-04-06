@@ -302,12 +302,127 @@ table tr h5 {
 }
 }
 
+.text-descr {
+  margin-top: 10%;
+}
 
 .text-descr p {
-  padding: 10% 0;
+  padding: 0 0;
   font-size: 16px;
   font-family: Montserrat;
-  line-height: 1.5;
+  line-height: 1.8;
+}
+
+.text-descr h1 {
+  font-size: 22px;
+  font-family: Montserrat;
+  font-weight: bold;
+}
+
+.img-wrap {
+  text-align: center;
+}
+
+.dovidka-wrap {
+  position: absolute;
+  right: 10px;
+  display: flex;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  -o-flex-direction: column;
+  flex-direction: column;
+  opacity: 0;
+}
+
+
+.dovidka-wrap li {
+  list-style-type: none;
+}
+
+.dovidka-wrap li a {
+  color: #ffff;
+}
+
+.menu-wrap  {
+  padding-top: 20px;
+  position: relative;
+}
+
+.sub-menu-parent { position: relative; }
+
+.sub-menu { 
+  visibility: hidden; /* hides sub-menu */
+  opacity: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-2em);
+  z-index: -1;
+  transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+}
+
+.sub-menu-parent:focus .sub-menu,
+.sub-menu-parent:focus-within .sub-menu,
+.sub-menu-parent:hover .sub-menu {
+  visibility: visible; /* shows sub-menu */
+  opacity: 1;
+  z-index: 1;
+  transform: translateY(0%);
+  transition-delay: 0s, 0s, 0.3s; /* this removes the transition delay so the menu will be visible while the other styles transition */
+}
+
+/* presentational */
+
+nav a { color: #FFA500; display: block; padding: 0.5em 1em; text-decoration: none; }
+nav a:hover { color: #F55; }
+nav ul,
+nav ul li { list-style-type: none; padding: 0; margin: 0; }
+
+nav > ul { background: #EEE; text-align: center; }
+nav > ul > li { display: inline-block; border-left: solid 1px #aaa; }
+nav > ul > li:first-child { border-left: none; }
+
+.sub-menu {
+  background: #00008B;
+  width: 150px;
+  border-radius: 5px;
+}
+
+.sub-menu a {
+  color: #000; !important
+}
+
+.sub-menu a:hover {
+  color: #FFA500;
+  text-decoration: none;
+  transition: all .25s ease;
+}
+
+.menu-wrap a {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 14px;
+
+}
+
+.menu-wrap a::hover {
+  color: #FFA500;
+}
+
+
+nav > ul {
+  background-color: transparent;
+}
+
+nav a {
+  transition: all .25s ease;
+}
+
+nav a:hover {
+  color: #FFA500;
+  text-decoration: none;
 }
 
 

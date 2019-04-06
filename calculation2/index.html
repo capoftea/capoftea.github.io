@@ -36,52 +36,59 @@
 						</div>
 						<div class="col-sm-8 col-xs-8 col-12">
 							<div class="menu-wrap">
-								<ul class="menu">
-									<li><a href="https://capoftea.github.io/calculation2/statik.html">Статична маршрутизація</a></li>
-							<li><a href="https://capoftea.github.io/calculation2/dynamik.html">Динамічна маршрутизація</a></li>
-							<li><a href="https://capoftea.github.io/calculation2/subnet.html">Ділення мережі на підмережі</a></li>
-								</ul>
+								<nav>
+									<ul>
+										<li class="sub-menu-parent" tab-index="0">
+											<a href="https://capoftea.github.io/calculation2/">Розрахунок ір-адрес</a>
+										</li>
+										<li class="sub-menu-parent" tab-index="0">
+											<a href="https://capoftea.github.io/calculation2/router-boots.html">Розрахунок підмереж</a>
+										</li>
+										<li class="sub-menu-parent" tab-index="0">
+											<a href="#">Довідка</a>
+											<ul class="sub-menu">
+												<li><a href="https://capoftea.github.io/calculation2/statik.html">Статична адресація</a></li>
+												<li><a href="https://capoftea.github.io/calculation2/dynamik.html">Динамічна адресація</a></li>
+												<li><a href="https://capoftea.github.io/calculation2/subnet.html">Поділ на підмережі</a></li>
+											</ul></li>
+										</ul>
+									</nav>
+								</div>
+							</div>
+							<div class="col-md-12 col-sm-12 col-xs-12 col-12">
+								<div class="input-wrap">
+									<input class="input-1" type="text" name="in_address"  placeholder="Ip - address" onkeyup="ipChange()" />
+								</div>
+
+							</div>
+							<div class="col-md-12 col-sm-12 col-xs-12 col-12">
+								<div class="input-wrap">
+									<input class="input-1" type="text" name="in_subnet" placeholder="mask" onkeyup="subChange()" />
+								</div>
 							</div>
 						</div>
-						<div class="col-md-12 col-sm-12 col-xs-12 col-12">
-							<div class="input-wrap">
-								<input class="input-1" type="text" name="in_address"  placeholder="Ip - address" onkeyup="ipChange()" />
-							</div>
-							
-						</div>
-						<div class="col-md-12 col-sm-12 col-xs-12 col-12">
-							<div class="input-wrap">
-								<input class="input-1" type="text" name="in_subnet" placeholder="mask" onkeyup="subChange()" />
-							</div>
-						</div>
-					</div>
-					
-					<div id='is_valid' class='is_valid' style="background-color: transparent;"><p></p></div>
-				</form>
-			</div>
-			<div class="output">
-				<form name="output" action="https://tools.virot.eu/ipcalc/post">
-					<table>
-						<tr class="tr"><td><h5>IP адреса:</h5></td><td><input type="text" name="out_address" disabled="disabled" /></td></tr>
-						<tr class="tr"><td><h5>Перша доступна адреса:</h5></td><td><input type="text" name="out_firstusable" disabled="disabled" /></td></tr>
-						<tr class="tr"><td><h5>Підмережа:</h5></td><td><input type="text" name="out_subnet" disabled="disabled" /></td></tr>
-						<tr class="tr"><td><h5>Останя адреса:</h5></td><td><input type="text" name="out_lastusable" disabled="disabled" /></td></tr>
-						<tr class="tr"><td><h5>CIDR:</h5></td><td><input type="text" name="out_cidr" disabled="disabled" /></td></tr>
-						<tr class="tr"><td><h5>Може використовуватись:</h5></td><td><input type="text" name="out_amountaddresses" disabled="disabled" /></td></tr>
-						<tr class="tr"><td><h5>Мережева адреса:</h5></td><td><input type="text" name="out_netaddr" disabled="disabled" /></td></tr>
-						<tr class="tr"><td><h5>Зворотня адреса:</h5></td><td><input type="text" name="out_ptraddr" disabled="disabled" /></td></tr>
-						<tr class="tr"><td><h5>Широкомовна адреса:</h5></td><td><input type="text" name="out_bcast" disabled="disabled" /></td></tr>
-					</table>
-				</form>
-			</div>
-			<div class="col-sm-12">
-				<div class="button-wrap">
-					<a class="button" href="https://capoftea.github.io/calculation2/router-boots.html">Генерація конфігураційних файлів <img src="img/redesign/right.png" alt="" /></a>
+
+						<div id='is_valid' class='is_valid' style="background-color: transparent;"><p></p></div>
+					</form>
+				</div>
+				<div class="output">
+					<form name="output" action="https://tools.virot.eu/ipcalc/post">
+						<table>
+							<tr class="tr"><td><h5>IP адреса:</h5></td><td><input type="text" name="out_address" disabled="disabled" /></td></tr>
+							<tr class="tr"><td><h5>Перша доступна адреса:</h5></td><td><input type="text" name="out_firstusable" disabled="disabled" /></td></tr>
+							<tr class="tr"><td><h5>Підмережа:</h5></td><td><input type="text" name="out_subnet" disabled="disabled" /></td></tr>
+							<tr class="tr"><td><h5>Останя адреса:</h5></td><td><input type="text" name="out_lastusable" disabled="disabled" /></td></tr>
+							<tr class="tr"><td><h5>CIDR:</h5></td><td><input type="text" name="out_cidr" disabled="disabled" /></td></tr>
+							<tr class="tr"><td><h5>Може використовуватись:</h5></td><td><input type="text" name="out_amountaddresses" disabled="disabled" /></td></tr>
+							<tr class="tr"><td><h5>Мережева адреса:</h5></td><td><input type="text" name="out_netaddr" disabled="disabled" /></td></tr>
+							<tr class="tr"><td><h5>Зворотня адреса:</h5></td><td><input type="text" name="out_ptraddr" disabled="disabled" /></td></tr>
+							<tr class="tr"><td><h5>Широкомовна адреса:</h5></td><td><input type="text" name="out_bcast" disabled="disabled" /></td></tr>
+						</table>
+					</form>
 				</div>
 			</div>
-		</div>
 
-	</header>
+		</header>
 
 
 
