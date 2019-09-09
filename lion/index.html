@@ -20,12 +20,13 @@
 			<h1>hello000000</h1>
 		</div>
 
-		<script type="module">
-			import * as THREE from 'three.module.js';
-			import Stats from 'stats.module.js';
-			import { GUI } from 'dat.gui.module.js';
-			import { OrbitControls } from 'OrbitControls.js';
-			import { SVGLoader } from 'SVGLoader.js';
+		<script type="module" src="three.js">
+			import * as THREE from './three.js';
+			import * as THREE from './three.module.js';
+			import Stats from './stats.module.js';
+			import { GUI } from './dat.gui.module.js';
+			import { OrbitControls } from './OrbitControls.js';
+			import { SVGLoader } from './SVGLoader.js';
 			var renderer, stats, scene, camera, gui, guiData;
 			init();
 			animate();
@@ -62,18 +63,18 @@
 				if ( gui ) gui.destroy();
 				gui = new GUI( { width: 350 } );
 				gui.add( guiData, 'currentURL', {
-					"Tiger": 'tiger.svg',
-					"Three.js": 'threejs.svg',
-					"Joins and caps": 'lineJoinsAndCaps.svg',
-					"Hexagon": 'hexagon.svg',
-					"Test 1": 'tests/1.svg',
-					"Test 2": 'tests/2.svg',
-					"Test 3": 'tests/3.svg',
-					"Test 4": 'tests/4.svg',
-					"Test 5": 'tests/5.svg',
-					"Test 6": 'tests/6.svg',
-					"Test 7": 'tests/7.svg',
-					"Test 8": 'tests/8.svg'
+					"Tiger": './tiger.svg',
+					"Three.js": './threejs.svg',
+					"Joins and caps": './lineJoinsAndCaps.svg',
+					"Hexagon": './hexagon.svg',
+					"Test 1": './tests/1.svg',
+					"Test 2": './tests/2.svg',
+					"Test 3": './tests/3.svg',
+					"Test 4": './tests/4.svg',
+					"Test 5": './tests/5.svg',
+					"Test 6": './tests/6.svg',
+					"Test 7": './tests/7.svg',
+					"Test 8": './tests/8.svg'
 				} ).name( 'SVG File' ).onChange( update );
 				gui.add( guiData, 'drawStrokes' ).name( 'Draw strokes' ).onChange( update );
 				gui.add( guiData, 'drawFillShapes' ).name( 'Draw fill shapes' ).onChange( update );
